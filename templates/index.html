@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-left">
+      <span class="logo">◈ DEVBOARD</span>
+      <span class="tagline">your personal command center</span>
+    </div>
+    <div class="header-right">
+      <span id="live-clock" class="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <!-- ── Grid ── -->
+  <main class="grid">
+
+    <!-- Weather Card -->
+    <section class="card card--weather" id="weather-card">
+      <div class="card-label">WEATHER</div>
+      <div class="weather-content">
+        <div class="weather-icon" id="weather-icon">⛅</div>
+        <div class="weather-main">
+          <div class="temp" id="weather-temp">--°</div>
+          <div class="weather-city" id="weather-city">Loading...</div>
+        </div>
+        <div class="weather-details">
+          <div class="weather-stat">
+            <span class="stat-label">WIND</span>
+            <span class="stat-val" id="weather-wind">-- km/h</span>
+          </div>
+          <div class="weather-stat">
+            <span class="stat-label">HUMIDITY</span>
+            <span class="stat-val" id="weather-humidity">--%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Card -->
+    <section class="card card--quote" id="quote-card">
+      <div class="card-label">QUOTE OF THE DAY</div>
+      <blockquote class="quote-text" id="quote-text">Loading inspiration...</blockquote>
+      <cite class="quote-author" id="quote-author">—</cite>
+      <button class="btn-refresh" id="refresh-quote">↻ New quote</button>
+    </section>
+
+    <!-- Todo Card -->
+    <section class="card card--todo">
+      <div class="card-label">TO-DO LIST</div>
+      <ul class="todo-list" id="todo-list">
+        <li class="todo-loading">Loading tasks...</li>
+      </ul>
+      <div class="todo-input-row">
+        <input type="text" id="new-todo" class="todo-input" placeholder="Add a new task..." />
+        <button class="btn-add" id="add-todo-btn">+</button>
+      </div>
+    </section>
+
+    <!-- Stats Card -->
+    <section class="card card--stats">
+      <div class="card-label">QUICK STATS</div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-number" id="stat-tasks">0</span>
+          <span class="stat-desc">Tasks left</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" id="stat-done">0</span>
+          <span class="stat-desc">Completed</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" id="stat-streak">1</span>
+          <span class="stat-desc">Day streak</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" id="stat-quotes">0</span>
+          <span class="stat-desc">Quotes read</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Built with Python + Flask · <span id="footer-date"></span>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
